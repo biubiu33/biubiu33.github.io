@@ -4,74 +4,148 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>biubiu的简历</title>
     <style>
         body{
-            margin:0;
+            margin: 10px;
             padding:0;
         }
         h1{
-            padding:40px;
+            padding:10px;
+            text-align: center;
+        }
+        .pct{
+            text-align: center;
+            border:1px solid black;
+        }
+        .pct:hover{
+            animation: myborder 2s;
+        }
+        @keyframes myborder {
+            50% {border: 15px solid lightblue;}
         }
         .container {
-            width: 600px;
+            width: 800px;
+            margin: 0 auto;
+            padding: 10px 20px;
+            margin-top: 0;
+            background-image: url("bg.jpg");
+            box-shadow: 5px 5px 5px 5px #888888;
 
         }
         h2{
+            padding-left: 10px;
             background-color: rgb(135, 156, 226);
             color:aliceblue;
-            
+            line-height: 30px;
+            border-radius: 3px;
+            /* box-shadow: 10px 10px 5px #999999; */
+            animation:myshadow 2s infinite;
+        }
+        @keyframes myshadow {
+            50% {box-shadow: 10px 10px 5px #999999;}
         }
         .header{
             background-color: blanchedalmond;
-            height:40px;
+            height:250px;
+            display: flex;
+            flex-direction: row;
+            align-items:center;
+            justify-content: space-around;
         }
-        .header .container{
-            background-color:#13537e;
-            height:40px;
-
+        .bintro{
+            font-size: larger;
         }
-        .main{
-            background-color: #eeeeee;
-            height:800px;
+        .bintro a{
+            text-decoration: none;
         }
-
+        .bintro a:hover{
+            font-size:25px;
+            animation:mydecoration 2s infinite;
+        }
+        @keyframes mydecoration{
+            from{text-decoration:none;}
+            to{text-decoration:underline;}
+            from{color:aquamarine} to{color:rgb(238, 122, 141)}
+        }
+        .goback{
+            width: 40px;
+            height: 40px;
+            background-color: #313131;
+            position:fixed;
+            right:20px;
+            bottom: 20px;
+            border-radius: 50%;
+            animation: myright 5s infinite;
+        }
+        @keyframes myright{
+            50%{right:100px;}
+        }
+        @keyframes mymove {
+            100% {transform: rotate(360deg);}
+        }
+        table{
+            text-align: center;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-    <h1>biubiu</h1>
-    <img src="/img/biubiu.jpg" alt="wuwu" width="200px">
-    <hr>
-    <h2>emm</h2>
-    <table>
-        <tr>
-            <td>123</td>
-            <td>123</td>
-            <td>123</td>
-        </tr>
-        <tr>
-            <td>123</td>
-            <td>123</td>
-            <td>123</td>
-        </tr>
-    </table>
-    <hr>
-    <h2>emmmm</h2>
-    <ol>
-        <li>name</li>
-        <li>name</li>
-        <li>name</li>
-        <li>name</li>
-    </ol>
-    <hr>
-    <h2>emmmmmmmmm</h2>
-    <ul>
-        <li>ababa</li>
-        <li><b>ababa</b></li>
-        <li>ababa</li>
-        <li>ababa</li>
-    </ul>
+        <div class="header">
+            <div class="pct">
+                <img src="img\biubiu.jpg" alt="wuwu" width="200px">
+            </div>
+            <div class="bintro">
+                姓名：biubiu<br>
+                电话：16888888888 <br>
+                邮箱：xxxx@xxx.com <br>
+                school:<a href="suibe.html">suibe</a>
+            </div>
+            <div class="bintro">
+                姓名：biubiu<br>
+                电话：16888888888 <br>
+                邮箱：xxxx@xxx.com
+            </div>
 
+        </div>
+        
+        
+        <hr>
+        <h2>emm</h2>
+        <table style="width:100%" border=1 cellspacing=0>
+            <tr>
+                <td>时间</td>
+                <td>学校</td>
+                <td>职务</td>
+            </tr>
+            <tr>
+                <td>123</td>
+                <td>123</td>
+                <td>123</td>
+            </tr>
+            <tr>
+                <td>123</td>
+                <td>123</td>
+                <td>123</td>
+            </tr>
+        </table>
+        <hr>
+        <h2>emmmm</h2>
+        <ol>
+            <li>name</li>
+            <li>name</li>
+            <li>name</li>
+            <li>name</li>
+        </ol>
+        <hr>
+        <h2>emmmmmmmmm</h2>
+        <ul>
+            <li>ababa</li>
+            <li><b>ababa</b></li>
+            <li>ababa</li>
+            <li>ababa</li>
+        </ul>
+    </div>
+    <div class="goback"></div>
 </body>
 </html>
