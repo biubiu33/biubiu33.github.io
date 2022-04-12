@@ -5,8 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
     <style>
+        a {
+            text-decoration: none;
+            color: #ffffff;
+        }
+
         body {
             margin: 0;
             padding: 0;
@@ -35,7 +39,10 @@
         }
         .links a{
             font-size: x-large;
-            color: rgb(61, 223, 223);
+        }
+        .links a:hover{
+            text-decoration:overline;
+            transition-duration: 2s;
         }
         .header .header_left{
 
@@ -94,9 +101,26 @@
             flex-direction: row;
             justify-content:space-around;
         }
-        .link_con a{
+        .link_con{
+            width: 18%;
             font-size: x-large;
             color: azure;
+            text-align: center;
+        }
+        #link_con1{
+            background-image: linear-gradient(to right, rgb(255, 130, 130),violet);
+        }
+        #link_con2{
+            background-image: linear-gradient(to right, violet,rgb(121, 121, 255));
+        }
+        #link_con3{
+            background-image: linear-gradient(to right, rgb(121, 121, 255),rgb(125, 255, 125));
+        }
+        #link_con4{
+            background-image: linear-gradient(to right, rgb(125, 255, 125),rgb(255, 255, 130));
+        }
+        #link_con5{
+            background-image: linear-gradient(to right, rgb(255, 255, 130),orange);
         }
         .main{
             margin-top: 10px;
@@ -212,13 +236,14 @@
         .news_cat>.stt:hover{
             background-color: red;
             color: white;
+
         }
 
     </style>
 </head>
 <body>
     <div class="news_bg">
-        <img src="img\u=192153522,2209992081&fm=253&fmt=auto&app=138&f=JPEG.webp" alt="wuwuwu" width="100%">
+        <img src="img\bg.png" alt="wuwuwu" width="100%">
         <div class="header">
             <div class="header_left">
                 <div class="links"><a href="" >学生</a></div> 
@@ -248,11 +273,11 @@
             <div class="menu_link"><a href="" >公开事项</a></div> 
         </div>
         <div class="footer">
-            <div class="link_con"><a href="" >校园要闻</a></div> 
-            <div class="link_con"><a href="" >新闻快讯</a></div> 
-            <div class="link_con"><a href="" >媒体报道</a></div> 
-            <div class="link_con"><a href="" >专题网站</a></div> 
-            <div class="link_con"><a href="" >精彩影像</a></div> 
+            <div class="link_con" id="link_con1"><a href="" ><h3>校园要闻</h3></a></div> 
+            <div class="link_con" id="link_con2"><a href="" ><h3>新闻快讯</h3></a></div> 
+            <div class="link_con" id="link_con3"><a href="" ><h3>媒体报道</h3></a></div> 
+            <div class="link_con" id="link_con4"><a href="" ><h3>专题网站</h3></a></div> 
+            <div class="link_con" id="link_con5"><a href="" ><h3>精彩影像</h3></a></div> 
         </div>
     </div>
     <div class="main">
