@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D.Va</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+    }
+    body,html{
+      height:100%;
+      margin:0;
+      padding:0;
+
+    }
+    #all{
+      /* height: 2600px; */
+      width: 100%;
+      background: url('大作业/bj2.jpg') no-repeat;
+      background-size: cover;
+      position: relative;
+      overflow: hidden;
+    }
+    .heading1{
+        /* background-color: rgb(144, 175, 233); */
+        background-image: linear-gradient(rgb(144, 175, 233), rgba(144, 175, 233, 0.3));
+        margin-bottom: 10px;
+      
+        position: fixed;
+        width: 100%;
+        top: 0;
+        height: 100px;
+        z-index: 9999;
+    }
+    h1{
+      
+      font-size:80px;
+      font-style: italic;
+      text-align: center;
+      font-weight: bolder;
+      -webkit-text-stroke:5px purple;
+      color: transparent; 
+      margin: 0 auto;
+      
+    }
+    
+    .blank{
+      height: 110px;
+      width: 100%;
+      background-color: blacks;
+    }
+      #container1 {
+        top:40px;
+      position: relative;
+      width: 800px;
+      height: 800px;
+      border: 1px solid #333;
+      overflow: hidden;
+    }
+    
+
+    #list {
+      position: absolute;
+      z-index: 1;
+      width: 3200px;
+      height: 800px;
+      left: 0px;
+    }
+
+    #list img {
+      float: left;
+      width: 800px;
+      height: 800px;
+    }
+
+    #buttons {
+      position: absolute;
+      left: 350px;
+      bottom: 20px;
+      z-index: 2;
+      height: 10px;
+      width: 100px;
+    }
+
+    #buttons span {
+      float: left;
+      margin-right: 5px;
+      width: 10px;
+      height: 10px;
+      border: 1px solid #fff;
+      border-radius: 50%;
+      background: #333;
+      cursor: pointer;
+      
+    }
+
+    #buttons .on {
+      background: orangered;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 380px;
+      z-index: 2;
+      display: none;
+      width: 40px;
+      height: 40px;
+      font-size: 36px;
+      font-weight: bold;
+      line-height: 39px;
+      text-align: center;
+      color: #fff;
+      background-color: RGBA(0, 0, 0, 0.3);
+      cursor: pointer;
+    }
+
+    .arrow:hover {
+      background-color: RGBA(0, 0, 0, 0.7);
+    }
+
+    #container1:hover .arrow {
+      display: block;
+    }
+
+    #prev {
+      left: 20px;
+      text-decoration: none;
+    }
+
+    #next {
+      right: 20px;
+      text-decoration: none;
+    }
+  
+    /* 滑动图片效果 */
+    
+
+    .intro{
+      margin: 20px;
+      width: 100%;
+      /* height: 2000px; */
+      
+    }
+    .header{
+      height:80px;
+      font-size: 25px;
+      display:flex;
+      flex-direction: row;
+    }
+    .left{
+      width: 10%;
+      height: 100%;
+      background-color:white;
+      line-height: 80px;
+      text-align: center;
+      cursor: pointer;
+      border-right: 1px solid #FECC5B;
+      color:black;
+    }
+    .left:hover{
+      animation: addfont 0.3s;
+      font-size: 40px;
+    }
+    .right:hover{
+      animation: addfont 0.5s;
+      font-size: 40px;
+    }
+    @keyframes addfont{
+      from{font-size: 25px;}
+      to{font-size: 40px;}
+    }
+    .right{
+      width: 10%;
+      height: 100%;
+      background-color: rgb(47, 45, 69);
+      line-height: 80px;
+      text-align: center;
+      cursor: pointer;
+      color: white;
+    }
+    .main{
+      display:flex;
+      flex-direction: row;
+      height: 100%;
+  
+    }
+    .main1{
+      width: 50%;
+      background-color:white;
+    }
+    .main2{
+        width: 800px;
+        
+    }
+    /* 文字框切换 */
+    h2{
+      font-size: 25px;
+      color: rgb(77, 102, 244);
+    }
+    h3{
+      font-size: 50px;
+      font-style: italic;
+    }
+    .text1{
+      font-size: 15px;
+      margin-bottom: 30px;
+    }
+    hr{
+      background-color: rgb(81, 140, 250);
+      height: 2px;
+      margin-bottom: 30px;
+    }
+    table{
+      border-collapse: collapse;
+    }
+    table td{
+      border:1px #808080 solid;
+      font-size: 15px;
+      overflow:hidden;
+    }
+    .title{
+      font-size: 50px;
+      text-align: center;
+      font-style: italic;
+
+    }
+    .jineng{
+      margin: 30px;
+      font-family: STKaiti;
+    }
+    .goback{
+      /* width: 60px;
+      height: 60px;
+      position:fixed;
+      right:0;
+      bottom: 0px;
+      background: url(大作业/ow.jpg) no-repeat;
+      animation: yes 5s infinite;
+      z-index: 999; */
+
+      width: 45px;
+      height: 45px;
+      position:fixed;
+      right:20px;
+      bottom: 20px;
+      border-radius: 50%;
+      background: url(大作业/ow.jpg) no-repeat;
+      /* animation: yes 5s infinite; */
+      z-index: 999;
+      cursor: pointer;
+    }
+    /* @keyframes yes{
+        50%{right: 200px;
+        }
+    } */
+    .sec2{
+      color: white;
+      height: 1100px;
+      font-size: 20px;
+    }
+    ul{
+      list-style: none;
+    }
+
+    .album{
+      /* 弹性布局 让页面元素水平+垂直居中 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* 让页面始终占浏览器总高 */
+      height: 100vh;
+      background-color: #000;
+      /* 视距 让元素看起来更有3D效果 */
+      perspective: 900px;
+      display: none;
+    }
+    .title_album{
+      position:fixed;
+      justify-content: center;
+      top:80px;
+    }
+    .album img{
+      /* width: 200px; */
+      height: 200px;
+    }
+    section {
+      /* 相对定位 */
+      position: relative;
+      width: 300px;
+      height: 200px;
+      /* 鼠标放到元素上变成小手 */
+      cursor: pointer;
+      /* 让子元素保留其3D位置 */
+      transform-style: preserve-3d;
+      /* 动画 名称 时长 linear 是匀速 播放 infinite 是无限次播放 */
+      animation: rotate 20s linear infinite;
+    }
+    section:hover {
+      /* 鼠标放到元素上停止动画 */
+      animation-play-state: paused;
+    }
+    section div {
+      /* 绝对定位 */
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      /* 设置元素的倒影效果 below 是倒影效果在元素下方 15px 是元素和倒影的距离 后面的属性和背景渐变色是一个属性 设置了一个从下到上由背景透明色过渡到设置了不透明度的白色 */
+      -webkit-box-reflect: below 15px -webkit-linear-gradient(transparent 10%, rgba(255, 255, 255, 0.3));
+    }
+    section div:nth-child(1) {
+      transform: translateZ(300px);
+      background-color: rgba(193,76,57,0.4);
+    }
+    section div:nth-child(2) {
+      transform: rotateY(60deg) translateZ(300px);
+      background-color: rgba(110,156,114,0.4);
+    }
+    section div:nth-child(3) {
+      transform: rotateY(120deg) translateZ(300px);
+      background-color: rgba(94,95,122,0.4);
+    }
+    section div:nth-child(4) {
+      transform: rotateY(180deg) translateZ(300px);
+      background-color: rgba(245,235,152,0.4);
+    }
+    section div:nth-child(5) {
+      transform: rotateY(240deg) translateZ(300px);
+      background-color: rgba(80,163,188,0.4);;
+    }
+    section div:nth-child(6) {
+      transform: rotateY(300deg) translateZ(300px);
+      background-color: rgba(249,169,154,0.4);
+    }
+    /* 先定义旋转动画 */
+    @keyframes rotate {
+        0% {
+            transform: rotateY(0);
+        }
+        100% {
+            transform: rotateY(360deg);
+        }
+    }
+  </style>
+  <script>
+    window.onload = function () {
+      var width = 800;
+      var list = document.getElementById("list");
+      var prev = document.getElementById("prev");
+      var next = document.getElementById("next");
+      var buttons = document.getElementById("buttons");
+      var bs = buttons.children;
+      for (var i = 0; i < bs.length; i++) {
+        //闭包
+        (function (i) {
+        bs[i].addEventListener("click", function () {
+          console.log(i);
+          list.style.left = i * -800 + "px";
+          for (var j = 0; j < bs.length; j++) {
+            if (j == i) {
+              bs[j].className = "on";
+            } else {
+              bs[j].className = "";
+            }
+          }
+        });
+        })(i)
+      }
+
+      var num = list.children.length; // get img number
+      function animate(offset) {
+        var left = list.style.left ? parseInt(list.style.left) : 0;
+
+        if (list.style.left) {
+          left = parseInt(list.style.left);
+        } else {
+          left = 0;
+        }
+
+        var newLeft = left - offset * width;
+        list.style.left = newLeft + "px";
+        if (newLeft <= -num * width) {
+          list.style.left = "0px";
+        }
+        if (newLeft > 0) {
+          list.style.left = -(num - 1) * width + "px";
+        }
+        var k = parseInt(list.style.left) / -800;
+        var bs = buttons.children;
+        for (var i = 0; i < bs.length; i++) {
+          if (i == k) {
+            bs[i].className = "on";
+          } else {
+            bs[i].className = "";
+          }
+        }
+      }
+      prev.onclick = function () {
+        animate(-1);
+      };
+      next.onclick = function () {
+        animate(1);
+      };
+
+      window.setInterval(function () {
+        animate(1);
+      }, 3000);
+    };
+  </script>
+</head>
+<body>
+  <div id="all">
+    <div class="heading1" id="heading1">
+      <h1> D . V a </h1>
+    </div>
+    <div class="blank"></div>
+      <p align="center">
+        <video muted autoplay loop src="大作业/dva/1.mp4"  > 
+        </video>
+      </p>
+    <div class="intro">
+    <div class="header">
+      <div class="left" id="left">概况</div>
+      <div class="right" id="right">故事</div>
+    </div>
+    <div class="main" id="main">
+      <div class="main1" id="main1">
+        <br>  
+        <h2>&nbsp&nbsp角色类型</h2><br>
+        <h3>&nbsp&nbsp&nbsp重装</h3>
+        <br>
+        <div class="text1">
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp D.Va拥有一部强大的机甲，它具有两台全自动的近距离聚变机炮、<br>
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 可以使机甲飞跃敌人或障碍物的推进器、 还有可以抵御来自正面的 <br>
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 远程攻击的防御矩阵。 <br>
+        </div>
+        <hr>
+        <h2>&nbsp&nbsp技能</h2>
+        <table class="jineng">
+          <tr>
+            <td width="98">
+                <div><b>技能名称</b></div>
+              </td>
+              <td width="132">
+                <div><b>技能图标</b></div>
+              </td>
+              <td width="106">
+                <div><b>释放按键</b></div>
+              </td>
+              <td width="220">
+                <div><b>技能说明</b></div>
+              </td>
+              <td width="233">
+                <div><b>技能效果</b></div>
+            </td>
+          </tr>
+          <tr>
+              <td align="center" width="98">
+                  <div ><b>机甲：聚变机炮</b></div>
+              </td>
+              <td align="center" width="132">
+                <img src="大作业/dva/skillicon/j1.jpg" alt="">
+              </td>
+              <td align="center" width="106">
+                  <div >鼠标左键</div>
+              </td>
+              <td align="left" width="220">
+                  <div>D．Va的机甲装备有两台近距离旋转机炮。它们可以在不重新装填的情况下进行持续高伤害的火力输出，但使用时会降低D.Va的移动速度。</div>
+              </td>
+              <td align="left" width="233">
+                  种类：速射霰弹枪<br>
+                  伤害量：2/发（但弹药会在飞行10m后逐渐缩减伤害，20m减少至最低，为0.5/发），每次攻击打出11发<br>
+                  弹药：无限<br>
+                  射速：7次/秒<br>
+                  减速效果：40% <br>
+                  可以爆头<br>
+                  结束“机甲：防御矩阵”
+              </td>
+          </tr>
+          <tr>
+              <td align="center" width="98">
+                  <div ><b>机甲：推进器</b></div>
+              </td>
+              <td align="center" width="132">
+                <img src="大作业/dva/skillicon/j2.jpg" alt="">
+              </td>
+              <td align="center" width="106"><div >SHIFT</div>
+              </td>
+              <td align="left" width="220">
+                  <div >D.Va的机甲可以飞向空中。当加速器启动时，D.Va可以向前飞行。她可以改变飞行方向或撞开前方的敌人。</div>
+              </td>
+              <td valign="top" align="left" width="233">
+                  持续时间：最多2秒<br>
+                  冷却时间：5秒，效果结束后计时<br>
+                  伤害量：10<br>
+                  最大飞行距离：30m
+              </td>
+          </tr>
+          <tr>
+              <td align="center" width="98">
+                  <div ><b>机甲：防御矩阵</b></div>
+              </td>
+              <td align="center" width="132">
+                <img src="大作业/dva/skillicon/j3.jpg" alt="">
+              </td>
+              <td align="center" width="106">
+                  <div >鼠标右键</div>
+              </td>
+              <td align="left" width="220">
+                  <div >D.Va可以激活正前方的防御矩阵，将迎面而来飞射物吞噬。</div>
+              </td>
+              <td valign="top" align="left" width="233">
+                  持续时间：最多2秒<br>
+                  充能速度：16%/秒，不用0.75s后开始恢复<br>
+                  长度：15m<br>
+                  冷却时间：1秒<br>
+                  没有阻挡伤害上限<br>
+                  结束“机甲：聚变机炮”
+              </td>
+          </tr>
+          <tr>
+              <td align="center">
+                  <div ><b>机甲：自毁</b></div>
+              </td>
+              <td align="center">
+                <img src="大作业/dva/skillicon/j4.jpg" alt="">
+              </td>
+              <td align="center">
+                  Q
+              </td>
+              <td>D.Va可以从机甲中弹出并将反应器设定为自爆，对附近敌人造成巨大伤害，但对障碍物或屏障后的敌人无效。</td>
+              <td>
+                  伤害量：1000（但会对10m范围外的敌人缩减伤害至最低75）<br>
+                  爆炸范围：20m <br>
+                  在15m以外，自毁无法消灭200血的敌人<br>
+                  引爆时间：3秒<br>
+                  完成引爆后立即准备好“驾驶员：呼叫机甲”
+              </td>
+          </tr>
+          <tr>
+              <td align="center">
+                  <div ><b>驾驶员：光枪</b></div>
+              </td>
+              <td align="center">
+                <img src="大作业/dva/skillicon/j5.jpg" alt="">
+              </td>
+              <td align="center">鼠标左键</td>
+              <td>如果D.Va的装甲战斗机甲被摧毁，她可以呼叫一台全新的机甲回到战斗。从天而降的机甲还可以对周围敌人造成伤害并击退他们。</td>
+              <td>
+                  施放时间：2秒<br>
+                  伤害量：50（但会对1m外的敌人缩减伤害至最低15）<br>
+                  D.Va每0.64秒自动获得1%的终极技能充能<br>
+                  机甲自毁后可以立刻使用“驾驶员：呼叫机甲”<br>
+                  自动为光枪重新装弹
+              </td>
+          </tr>
+          <tr>
+              <td align="center"><b>驾驶员：呼叫机甲</b></td>
+              <td align="center">
+                <img src="大作业/dva/skillicon/j6.jpg" alt="">
+              </td>
+              <td align="center">Q</td>
+              <td>如果D.Va的装甲战斗机甲被摧毁，她可以呼叫一台全新的机甲回到战斗。从天而降的机甲还可以对周围敌人造成伤害并击退他们。</td>
+              <td>
+                  施放时间：2秒<br>
+                  伤害量：50（但会对1m外的敌人缩减伤害至最低15）<br>
+                  D.Va每0.64秒自动获得1%的终极技能充能<br>
+                  机甲自毁后可以立刻使用“驾驶员：呼叫机甲”<br>
+                  自动为光枪重新装弹
+              </td>
+          </tr>
+          <tr>
+              <td align="center"><b>机甲：微型飞弹</b></td>
+              <td align="center">
+                <img src="大作业/dva/skillicon/j7.jpg" alt="">
+              </td>
+              <td align="center">E</td>
+              <td>D.va发射导弹攻击敌人。导弹可以伤害自己。</td>
+              <td>
+                  启动时间：0.25秒<br>
+                  导弹数量： 18<br>
+                  持续时间：1.6秒<br>
+                  命中伤害：3<br>
+                  爆炸伤害:：4<br>
+                  爆炸范围:：1.5m<br>
+                  冷却时间： 8s<br>
+                  弹道速度：40m/s<br>
+                  线性溅射弹道，影响范围半径为1.5m
+              </td>
+          </tr>
+      </table>
+      </div>
+        <div class="main2" id="main2">
+          <div class="title">
+            皮肤展示
+          </div>
+          <div id="container1">
+            <div id="list">
+              <img src="大作业/dva/2.jpg" />
+              <img src="大作业/dva/3.jpg" />
+              <img src="大作业/dva/4.jpg" />
+              <img src="大作业/dva/5.jpg" />
+            </div>
+            <div id="buttons">
+              <span index="1" class="on"></span>
+              <span index="2"></span>
+              <span index="3"></span>
+              <span index="4"></span>
+            </div>
+            <a href="javascript:;" id="prev" class="arrow">&lt;</a>
+            <a href="javascript:;" id="next" class="arrow">&gt;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="goback" id="goback"></div>
+    <!-- 回到初始菜单 -->
+  </div>
+  
+  <div class="album" id="album">
+    <div class="title_album">
+      <h1>请选择你的英雄</h1>
+    </div>
+    <section>
+      <div onclick="window.location.href='yingxiong1.html'";return false;><img src="大作业/dva.jpg" alt="" /></div>
+      <div><img src="大作业/mei.jpg" alt="" /></div>
+      <div><img src="大作业/anna.jpg" alt="" /></div>
+      <div><img src="大作业/79.jpg" alt="" /></div>
+      <div onclick="window.location.href='yingxiong3.html'";return false;><img src="大作业/chanyata.jpg" alt="" /></div>
+      <div onclick="window.location.href='yingxiong2.html'";return false;><img src="大作业/aolisa.jpg" alt="" /></div>
+    </section>
+  </div>
+  
+
+  
+  <script>
+    let left=document.getElementById('left');
+    let right=document.getElementById('right');
+    let main1=document.getElementById('main1');
+    let main1html=main1.innerHTML;
+    left.onclick=function(){
+      main1.innerHTML=main1html;
+      this.style.backgroundColor="white";
+      right.style.backgroundColor="rgb(47, 45, 69)";
+      main1.style.backgroundColor="white";
+      
+    }
+    right.onclick=function(){
+      main1.innerHTML=' <div class="sec2"><h2>&nbsp&nbsp简介</h2><br><ul><li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp全称：宋哈娜，年龄：19岁</li><li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp职业：（前）职业玩家，机甲驾驶员</li><li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp行动基地：韩国，釜山</li><li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp隶属：韩国陆军特别机动部队</li> </ul><br><br><h2>“玩游戏就是要赢。”</h2><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspD.Va曾是一名职业玩家，而现在则利用自己的技巧驾驶一台尖端机甲保<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp卫国家。<br><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp二十年前，韩国遭到一台从东海出现的巨型机甲怪兽的攻击。这台怪物<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp在被击退前对多个沿海城市造成了毁灭性的破坏。为了应对这一威胁，<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp韩国政府部署了一支机械化无人机部队“MEKA”，用以应对未来的智<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp能机械威胁、保卫城市。<br><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp随着一系列袭击事件的不断发生，韩国政府最担心的事情还是发生了。<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp每过几年，那台巨型机械怪兽就会从海中出现袭击韩国和邻国。这台智<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp能机械可以从每一次的遭遇战中学习，使用新武器和能力并且以不同形<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp态出现。尽管韩国每次都能成功将其击退，但这台智能机械并未被彻底<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp摧毁。<br><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp随着智能机械不断进化，它最终干扰了MEKA的无人机控制网络，迫使<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp军方派驾驶员驾驶这些机甲。由于难以找到合适的候选人，政府开始向<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp那些拥有足以操控机甲尖端武器系统的必要反应和本能的国内职业玩家<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp寻求帮助，其中就包括顶尖玩家之一的“D.Va”宋哈娜。作为一名为了<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp获胜不惜一切代价的精英玩家，D.Va从来都不会对对手表现出丝毫的仁<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp慈。<br><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspD.Va将这次新任务视为一款全新的游戏，无所畏惧地和其他MEKA机甲<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp冲向战场，随时准备保卫自己的国家。最近，她开始向她的粉丝直播战<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp斗行动，而这也让她成为了世界巨星。<br><br></div>';
+      this.style.backgroundColor="grey";
+      left.style.backgroundColor="azure";
+      main1.style.backgroundColor="grey";
+    }
+
+    var OriginTitle = document.title;
+    var titleTime;
+    document.addEventListener("visibilitychange",
+    function() {
+      if (document.hidden) {
+          document.title = "你别走吖 Σ(っ °Д °;)っ";
+          clearTimeout(titleTime)
+      } 
+      else {
+          document.title = "(/≧▽≦/)你又回来啦！ " ;
+          titleTime = setTimeout(function() {
+              document.title = OriginTitle
+          },
+          2000);
+      }
+    });
+    //获取元素到页面顶部距离
+    function heightToTop(ele){
+      //ele为指定跳转到该位置的DOM节点
+      let bridge = ele;
+      let root = document.body;
+      let height = 0;
+      do{
+          height += bridge.offsetTop;
+          bridge = bridge.offsetParent;
+      }while(bridge !== root)
+      return height;
+    }
+    //跳转到相册
+    let goback=document.getElementById("goback");
+    let album=document.getElementById("album");
+    let head=document.getElementById('heading1');
+    var flag=true;
+    goback.addEventListener('click',function(){
+      if(flag){
+        album.style.display="block";
+        album.style.display="flex";
+        window.scrollTo({
+          top:heightToTop(album)
+        })
+        head.style.display="none";
+        flag=false;
+      }
+      else{
+        album.style.display="none";
+        window.scrollTo({
+          top:0
+        })
+        head.style.display="block";
+        flag=true;
+      }
+      
+    });
+    //滚轮事件
+    window.addEventListener('scroll',function(){
+      // console.log(document.body.clientHeight);
+      // console.log(document.body.scrollHeight);
+      // console.log(document.body.scrollTop);
+      // console.log(document.documentElement.scrollTop);
+      if(document.body.scrollHeight==document.body.clientHeight+2455){
+        if(document.documentElement.scrollTop<=2450){
+          album.style.display="none";
+          head.style.display="block";
+          flag=true;
+        }
+      }
+      if(document.body.scrollHeight==document.body.clientHeight+2054){
+        if(document.documentElement.scrollTop<=2050){
+          album.style.display="none";
+          head.style.display="block";
+          flag=true;
+        }
+      }
+    })
+      
+  </script>
+</body>
+</html>

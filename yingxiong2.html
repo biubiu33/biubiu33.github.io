@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>奥丽莎</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+    }
+    body,html{
+      height:100%;
+      margin:0;
+      padding:0;
+
+    }
+    #all{
+      /* height: 2600px; */
+      width: 100%;
+      background: url('大作业/bj2.jpg') no-repeat;
+      background-size: cover;
+      position: relative;
+      overflow: hidden;
+    }
+    .heading1{
+        /* background-color: rgb(144, 175, 233); */
+        background-image: linear-gradient(rgb(144, 175, 233), rgba(144, 175, 233, 0.3));
+        margin-bottom: 10px;
+      
+        position: fixed;
+        width: 100%;
+        top: 0;
+        height: 100px;
+        z-index: 9999;
+    }
+    h1{
+      
+      font-size:80px;
+      font-style: italic;
+      text-align: center;
+      font-weight: bolder;
+      -webkit-text-stroke:5px purple;
+      color: transparent; 
+      margin: 0 auto;
+      
+    }
+    
+    .blank{
+      height: 110px;
+      width: 100%;
+      background-color: blacks;
+    }
+      #container1 {
+        top:40px;
+      position: relative;
+      width: 800px;
+      height: 800px;
+      border: 1px solid #333;
+      overflow: hidden;
+    }
+    
+
+    #list {
+      position: absolute;
+      z-index: 1;
+      width: 3200px;
+      height: 800px;
+      left: 0px;
+    }
+
+    #list img {
+      float: left;
+      width: 800px;
+      height: 800px;
+    }
+
+    #buttons {
+      position: absolute;
+      left: 350px;
+      bottom: 20px;
+      z-index: 2;
+      height: 10px;
+      width: 100px;
+    }
+
+    #buttons span {
+      float: left;
+      margin-right: 5px;
+      width: 10px;
+      height: 10px;
+      border: 1px solid #fff;
+      border-radius: 50%;
+      background: #333;
+      cursor: pointer;
+      
+    }
+
+    #buttons .on {
+      background: orangered;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 380px;
+      z-index: 2;
+      display: none;
+      width: 40px;
+      height: 40px;
+      font-size: 36px;
+      font-weight: bold;
+      line-height: 39px;
+      text-align: center;
+      color: #fff;
+      background-color: RGBA(0, 0, 0, 0.3);
+      cursor: pointer;
+    }
+
+    .arrow:hover {
+      background-color: RGBA(0, 0, 0, 0.7);
+    }
+
+    #container1:hover .arrow {
+      display: block;
+    }
+
+    #prev {
+      left: 20px;
+      text-decoration: none;
+    }
+
+    #next {
+      right: 20px;
+      text-decoration: none;
+    }
+  
+    /* 滑动图片效果 */
+    
+
+    .intro{
+      margin: 20px;
+      width: 100%;
+      /* height: 2000px; */
+      
+    }
+    .header{
+      height:80px;
+      font-size: 25px;
+      display:flex;
+      flex-direction: row;
+    }
+    .left{
+      width: 10%;
+      height: 100%;
+      background-color:white;
+      line-height: 80px;
+      text-align: center;
+      cursor: pointer;
+      border-right: 1px solid #FECC5B;
+      color:black;
+    }
+    .left:hover{
+      animation: addfont 0.3s;
+      font-size: 40px;
+    }
+    .right:hover{
+      animation: addfont 0.5s;
+      font-size: 40px;
+    }
+    @keyframes addfont{
+      from{font-size: 25px;}
+      to{font-size: 40px;}
+    }
+    .right{
+      width: 10%;
+      height: 100%;
+      background-color: rgb(47, 45, 69);
+      line-height: 80px;
+      text-align: center;
+      cursor: pointer;
+      color: white;
+    }
+    .main{
+      display:flex;
+      flex-direction: row;
+      height: 100%;
+  
+    }
+    .main1{
+      width: 50%;
+      background-color:white;
+    }
+    .main2{
+        width: 800px;
+        
+    }
+    /* 文字框切换 */
+    h2{
+      font-size: 25px;
+      color: rgb(77, 102, 244);
+    }
+    h3{
+      font-size: 50px;
+      font-style: italic;
+    }
+    .text1{
+      font-size: 15px;
+      margin-bottom: 30px;
+    }
+    hr{
+      background-color: rgb(81, 140, 250);
+      height: 2px;
+      margin-bottom: 30px;
+    }
+    table{
+      border-collapse: collapse;
+    }
+    table td{
+      border:1px #808080 solid;
+      font-size: 15px;
+      overflow:hidden;
+    }
+    .title{
+      font-size: 50px;
+      text-align: center;
+      font-style: italic;
+
+    }
+    .jineng{
+      margin: 30px;
+      font-family: STKaiti;
+    }
+    .goback{
+      /* width: 60px;
+      height: 60px;
+      position:fixed;
+      right:0;
+      bottom: 0px;
+      background: url(大作业/ow.jpg) no-repeat;
+      animation: yes 5s infinite;
+      z-index: 999; */
+
+      width: 45px;
+      height: 45px;
+      position:fixed;
+      right:20px;
+      bottom: 20px;
+      border-radius: 50%;
+      background: url(大作业/ow.jpg) no-repeat;
+      /* animation: yes 5s infinite; */
+      z-index: 999;
+      cursor: pointer;
+    }
+    /* @keyframes yes{
+        50%{right: 200px;
+        }
+    } */
+    .sec2{
+      color: white;
+      height: 1100px;
+      font-size: 20px;
+    }
+    ul{
+      list-style: none;
+    }
+
+    .album{
+      /* 弹性布局 让页面元素水平+垂直居中 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* 让页面始终占浏览器总高 */
+      height: 100vh;
+      background-color: #000;
+      /* 视距 让元素看起来更有3D效果 */
+      perspective: 900px;
+      display: none;
+    }
+    .title_album{
+      position:fixed;
+      justify-content: center;
+      top:80px;
+    }
+    .album img{
+      /* width: 200px; */
+      height: 200px;
+    }
+    section {
+      /* 相对定位 */
+      position: relative;
+      width: 300px;
+      height: 200px;
+      /* 鼠标放到元素上变成小手 */
+      cursor: pointer;
+      /* 让子元素保留其3D位置 */
+      transform-style: preserve-3d;
+      /* 动画 名称 时长 linear 是匀速 播放 infinite 是无限次播放 */
+      animation: rotate 20s linear infinite;
+    }
+    section:hover {
+      /* 鼠标放到元素上停止动画 */
+      animation-play-state: paused;
+    }
+    section div {
+      /* 绝对定位 */
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      /* 设置元素的倒影效果 below 是倒影效果在元素下方 15px 是元素和倒影的距离 后面的属性和背景渐变色是一个属性 设置了一个从下到上由背景透明色过渡到设置了不透明度的白色 */
+      -webkit-box-reflect: below 15px -webkit-linear-gradient(transparent 10%, rgba(255, 255, 255, 0.3));
+    }
+    section div:nth-child(1) {
+      transform: translateZ(300px);
+      background-color: rgba(193,76,57,0.4);
+    }
+    section div:nth-child(2) {
+      transform: rotateY(60deg) translateZ(300px);
+      background-color: rgba(110,156,114,0.4);
+    }
+    section div:nth-child(3) {
+      transform: rotateY(120deg) translateZ(300px);
+      background-color: rgba(94,95,122,0.4);
+    }
+    section div:nth-child(4) {
+      transform: rotateY(180deg) translateZ(300px);
+      background-color: rgba(245,235,152,0.4);
+    }
+    section div:nth-child(5) {
+      transform: rotateY(240deg) translateZ(300px);
+      background-color: rgba(80,163,188,0.4);;
+    }
+    section div:nth-child(6) {
+      transform: rotateY(300deg) translateZ(300px);
+      background-color: rgba(249,169,154,0.4);
+    }
+    /* 先定义旋转动画 */
+    @keyframes rotate {
+        0% {
+            transform: rotateY(0);
+        }
+        100% {
+            transform: rotateY(360deg);
+        }
+    }
+  </style>
+  <script>
+    window.onload = function () {
+      var width = 800;
+      var list = document.getElementById("list");
+      var prev = document.getElementById("prev");
+      var next = document.getElementById("next");
+      var buttons = document.getElementById("buttons");
+      var bs = buttons.children;
+      for (var i = 0; i < bs.length; i++) {
+        //闭包
+        (function (i) {
+        bs[i].addEventListener("click", function () {
+          console.log(i);
+          list.style.left = i * -800 + "px";
+          for (var j = 0; j < bs.length; j++) {
+            if (j == i) {
+              bs[j].className = "on";
+            } else {
+              bs[j].className = "";
+            }
+          }
+        });
+        })(i)
+      }
+
+      var num = list.children.length; // get img number
+      function animate(offset) {
+        var left = list.style.left ? parseInt(list.style.left) : 0;
+
+        if (list.style.left) {
+          left = parseInt(list.style.left);
+        } else {
+          left = 0;
+        }
+
+        var newLeft = left - offset * width;
+        list.style.left = newLeft + "px";
+        if (newLeft <= -num * width) {
+          list.style.left = "0px";
+        }
+        if (newLeft > 0) {
+          list.style.left = -(num - 1) * width + "px";
+        }
+        var k = parseInt(list.style.left) / -800;
+        var bs = buttons.children;
+        for (var i = 0; i < bs.length; i++) {
+          if (i == k) {
+            bs[i].className = "on";
+          } else {
+            bs[i].className = "";
+          }
+        }
+      }
+      prev.onclick = function () {
+        animate(-1);
+      };
+      next.onclick = function () {
+        animate(1);
+      };
+
+      window.setInterval(function () {
+        animate(1);
+      }, 3000);
+    };
+  </script>
+</head>
+<body>
+  <div id="all">
+    <div class="heading1" id="heading1">
+      <h1> 奥&nbsp丽&nbsp莎 </h1>
+    </div>
+    <div class="blank"></div>
+      <p align="center">
+        <video muted autoplay loop src="大作业/aolisa/1.mp4"  > 
+        </video>
+      </p>
+    <div class="intro">
+    <div class="header">
+      <div class="left" id="left">概况</div>
+      <div class="right" id="right">故事</div>
+    </div>
+    <div class="main" id="main">
+      <div class="main1" id="main1">
+        <br>  
+        <h2>&nbsp&nbsp角色类型</h2><br>
+        <h3>&nbsp&nbsp&nbsp重装</h3>
+        <br>
+        <div class="text1">
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 奥丽莎是团队的核心，可以用防护屏障掩护前线队友。她可以从远<br>
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 距离进行攻击、强化自身的防御、发射重力弹使敌人减速并打乱阵 <br>
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 型，同时还能部署超充能器强化范围多个队友的伤害输出。 <br>
+        </div>
+        <hr>
+        <h2>&nbsp&nbsp技能</h2>
+        <table class="jineng">
+          <tr>
+            <td width="98">
+                <div><b>技能名称</b></div>
+              </td>
+              <td width="132">
+                <div><b>技能图标</b></div>
+              </td>
+              <td width="106">
+                <div><b>释放按键</b></div>
+              </td>
+              <td width="220">
+                <div><b>技能说明</b></div>
+              </td>
+              <td width="233">
+                <div><b>技能效果</b></div>
+            </td>
+          </tr>
+          <tr>
+              <td align="center" width="98">
+                  <div ><b>聚变驱动器</b></div>
+              </td>
+              <td align="center" width="132">
+                <img src="大作业/aolisa/ji1.jpg" alt="">
+              </td>
+              <td align="center" width="106">
+                  <div >鼠标左键</div>
+              </td>
+              <td align="left" width="220">
+                  <div>奥丽莎的全自动武器可以持续输出伤害，但在开火时会降低30%移动速度</div>
+              </td>
+              <td align="left" width="233">
+                弹药：150 <br>
+                射速：120 <br>
+                冷却时间：2.5秒
+              </td>
+          </tr>
+          <tr>
+              <td align="center" width="98">
+                  <div ><b>强固防御</b></div>
+              </td>
+              <td align="center" width="132">
+                <img src="大作业/aolisa/ji2.jpg" alt="">
+              </td>
+              <td align="center" width="106"><div >SHIFT</div>
+              </td>
+              <td align="left" width="220">
+                  <div >奥丽莎短时内降低本身受到的伤害，并且免疫行动限制效果。减伤效果为50%。</div>
+              </td>
+              <td valign="top" align="left" width="233">
+                  
+              </td>
+          </tr>
+          <tr>
+              <td align="center" width="98">
+                  <div ><b>防护屏障</b></div>
+              </td>
+              <td align="center" width="132">
+                <img src="大作业/aolisa/ji4.jpg" alt="">
+              </td>
+              <td align="center" width="106">
+                  <div >E</div>
+              </td>
+              <td align="left" width="220">
+                  <div >奥丽莎扔出一道固定屏障，掩护她和队友并吸收敌方火力。吸收量为600，持续20秒，冷却时间10秒，场上无法同时存在两个屏障。</div>
+              </td>
+              <td valign="top" align="left" width="233">
+                <br><br>
+                吸收量：600 <br>
+                冷却时间：10秒
+              </td>
+          </tr>
+          <tr>
+              <td align="center">
+                  <div ><b>超充能器</b></div>
+              </td>
+              <td align="center">
+                <img src="大作业/aolisa/ji5.jpg" alt="">
+              </td>
+              <td align="center">
+                  Q
+              </td>
+              <td>奥丽莎部署一台设备，强化她视野内队友造成的伤害。强化幅度50%，持续时间15秒，范围视野内25米左右。</td>
+              <td>
+                  
+              </td>
+          </tr>
+          <tr>
+              <td align="center">
+                  <div ><b>站住别动</b></div>
+              </td>
+              <td align="center">
+                <img src="大作业/dva/skillicon/j5.jpg" alt="">
+              </td>
+              <td align="center">鼠标右键</td>
+              <td>奥丽莎射出一枚可以引爆的重力弹，使附近的敌人减速并将其拉向爆炸中心。作用范围约为4米。</td>
+              <td>
+                射速：30 <br>
+                冷却时间：8秒
+              </td>
+          </tr>
+         
+      </table>
+      </div>
+        <div class="main2" id="main2">
+          <div class="title">
+            皮肤展示
+          </div>
+          <div id="container1">
+            <div id="list">
+              <img src="大作业/aolisa/1.jpg" />
+              <img src="大作业/aolisa/2.jpg" />
+              <img src="大作业/aolisa/3.jpg" />
+              <img src="大作业/aolisa/4.jpg" />
+            </div>
+            <div id="buttons">
+              <span index="1" class="on"></span>
+              <span index="2"></span>
+              <span index="3"></span>
+              <span index="4"></span>
+            </div>
+            <a href="javascript:;" id="prev" class="arrow">&lt;</a>
+            <a href="javascript:;" id="next" class="arrow">&gt;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="goback" id="goback"></div>
+    <!-- 回到初始菜单 -->
+  </div>
+  
+  <div class="album" id="album">
+    <div class="title_album">
+      <h1>请选择你的英雄</h1>
+    </div>
+    <section>
+      <div onclick="window.location.href='yingxiong2.html'";return false;><img src="大作业/aolisa.jpg" alt="" /></div>
+      <div onclick="window.location.href='yingxiong1.html'";return false;><img src="大作业/dva.jpg" alt="" /></div>
+      <div><img src="大作业/mei.jpg" alt="" /></div>
+      <div><img src="大作业/79.jpg" alt="" /></div>
+      <div><img src="大作业/anna.jpg" alt="" /></div>
+      <div onclick="window.location.href='yingxiong3.html'";return false;><img src="大作业/chanyata.jpg" alt="" /></div>
+    </section>
+  </div>
+  
+
+  
+  <script>
+    let left=document.getElementById('left');
+    let right=document.getElementById('right');
+    let main1=document.getElementById('main1');
+    let main1html=main1.innerHTML;
+    left.onclick=function(){
+      main1.innerHTML=main1html;
+      this.style.backgroundColor="white";
+      right.style.backgroundColor="rgb(47, 45, 69)";
+      main1.style.backgroundColor="white";
+      
+    }
+    right.onclick=function(){
+      main1.innerHTML=' <div class="sec2"><h2>&nbsp&nbsp简介</h2><br><ul><li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp全称：奥丽莎 , 年龄：1个月</li><li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp职业：防卫机器人</li><li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp行动基地：努巴尼</li><li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp隶属：无</li> </ul><br><br><h2>“保护你们的安全是我的首要职责。”</h2><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp奥丽莎是用在努巴尼昙花一现的OR15防御机器人的零件组装而成的，她<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp是这座城市的新一代守护者但依然有很大的成长空间。<br><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp早在智械危机之前，位于尼日利亚的大型智械中枢就开始生产OR14“伊<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp迪纳”型安全机器人并将其投入使用。战后，该型号的机器人连同其他<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp在智械危机期间出现的机器人被勒令停产。二十年后，努巴尼重新组装<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp起了OR14生产线并将其用来保护这座城市免受外界的威胁。这些全新的<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspOR15型机器人虽然已经开始部署，但很快就在“末日铁拳”发动的一次<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp袭击中被消灭。<br><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp这场袭击之后该项目再次停产，剩余的OR15也都被市政府全部卖出。其<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp中一些零件被一位名为伊菲·奥拉迪尔的天才少女买入，她先前曾在机器<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp人以及人工智能领域的杰出成就而荣获阿达维基金“天才奖”。<br><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp在得到开明的父母同意之后，伊菲将获得的奖金用来购买那些报废的<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspOR15机器人。她相信努巴尼依然需要一位守护者，而经过升级改造的<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspOR15就是最合适的选择。伊菲修复并重新设置了机器人程序，同时将自<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp己设计的人格核心数据也安装了进去。<br><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp她将努巴尼新一代的守护者称为奥丽莎。<br><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp奥丽莎虽然证明了自己可以为这座城市服务，但她依然在努力优化自己<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspD.Va的程序。经验的缺乏让她时不时地会惹一些麻烦，但好在伊菲一直都在<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp为她进行必要的改造，而奥丽莎也对人工智能表现出了极强的适应能<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp力，在两人的共同努力下一切都在往好的方向发展。<br><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp随着奥丽莎成为这座城市的守护者，她需要学习许多关于这个世界和她<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp的职责的知识。但只要在伊菲积极乐观的影响以及她本身越来越强的荣<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp誉和职责感的引导下，奥丽莎将不惜一切守护努巴尼。<br><br></div>';
+      this.style.backgroundColor="grey";
+      left.style.backgroundColor="azure";
+      main1.style.backgroundColor="grey";
+    }
+
+    var OriginTitle = document.title;
+    var titleTime;
+    document.addEventListener("visibilitychange",
+    function() {
+      if (document.hidden) {
+          document.title = "你别走吖 Σ(っ °Д °;)っ";
+          clearTimeout(titleTime)
+      } 
+      else {
+          document.title = "(/≧▽≦/)你又回来啦！ " ;
+          titleTime = setTimeout(function() {
+              document.title = OriginTitle
+          },
+          2000);
+      }
+    });
+    //获取元素到页面顶部距离
+    function heightToTop(ele){
+      //ele为指定跳转到该位置的DOM节点
+      let bridge = ele;
+      let root = document.body;
+      let height = 0;
+      do{
+          height += bridge.offsetTop;
+          bridge = bridge.offsetParent;
+      }while(bridge !== root)
+      return height;
+    }
+    //跳转到相册
+    let goback=document.getElementById("goback");
+    let album=document.getElementById("album");
+    let head=document.getElementById('heading1');
+    var flag=true;
+    goback.addEventListener('click',function(){
+      if(flag){
+        album.style.display="block";
+        album.style.display="flex";
+        window.scrollTo({
+          top:heightToTop(album)
+        })
+        head.style.display="none";
+        flag=false;
+      }
+      else{
+        album.style.display="none";
+        window.scrollTo({
+          top:0
+        })
+        head.style.display="block";
+        flag=true;
+      }
+      
+    });
+    //滚轮事件
+    window.addEventListener('scroll',function(){
+      // console.log(document.body.clientHeight);
+      // console.log(document.body.scrollHeight);
+      // console.log(document.body.scrollTop);
+      // console.log(document.documentElement.scrollTop);
+      if(document.body.scrollHeight==document.body.clientHeight+1807){
+        if(document.documentElement.scrollTop<=1802){
+          album.style.display="none";
+          head.style.display="block";
+          flag=true;
+        }
+      }
+      if(document.body.scrollHeight==document.body.clientHeight+1988){
+        if(document.documentElement.scrollTop<=1982){
+          album.style.display="none";
+          head.style.display="block";
+          flag=true;
+        }
+      }
+    })
+      
+  </script>
+</body>
+</html>

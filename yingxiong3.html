@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>禅雅塔</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+    }
+    body,html{
+      height:100%;
+      margin:0;
+      padding:0;
+
+    }
+    #all{
+      /* height: 2600px; */
+      width: 100%;
+      background: url('大作业/bj2.jpg') no-repeat;
+      background-size: cover;
+      position: relative;
+      overflow: hidden;
+    }
+    .heading1{
+        /* background-color: rgb(144, 175, 233); */
+        background-image: linear-gradient(rgb(144, 175, 233), rgba(144, 175, 233, 0.3));
+        margin-bottom: 10px;
+      
+        position: fixed;
+        width: 100%;
+        top: 0;
+        height: 100px;
+        z-index: 9999;
+    }
+    h1{
+      
+      font-size:80px;
+      font-style: italic;
+      text-align: center;
+      font-weight: bolder;
+      -webkit-text-stroke:5px purple;
+      color: transparent; 
+      margin: 0 auto;
+      
+    }
+    
+    .blank{
+      height: 110px;
+      width: 100%;
+      background-color: blacks;
+    }
+      #container1 {
+        top:40px;
+      position: relative;
+      width: 800px;
+      height: 800px;
+      border: 1px solid #333;
+      overflow: hidden;
+    }
+    
+
+    #list {
+      position: absolute;
+      z-index: 1;
+      width: 3200px;
+      height: 800px;
+      left: 0px;
+    }
+
+    #list img {
+      float: left;
+      width: 800px;
+      height: 800px;
+    }
+
+    #buttons {
+      position: absolute;
+      left: 350px;
+      bottom: 20px;
+      z-index: 2;
+      height: 10px;
+      width: 100px;
+    }
+
+    #buttons span {
+      float: left;
+      margin-right: 5px;
+      width: 10px;
+      height: 10px;
+      border: 1px solid #fff;
+      border-radius: 50%;
+      background: #333;
+      cursor: pointer;
+      
+    }
+
+    #buttons .on {
+      background: orangered;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 380px;
+      z-index: 2;
+      display: none;
+      width: 40px;
+      height: 40px;
+      font-size: 36px;
+      font-weight: bold;
+      line-height: 39px;
+      text-align: center;
+      color: #fff;
+      background-color: RGBA(0, 0, 0, 0.3);
+      cursor: pointer;
+    }
+
+    .arrow:hover {
+      background-color: RGBA(0, 0, 0, 0.7);
+    }
+
+    #container1:hover .arrow {
+      display: block;
+    }
+
+    #prev {
+      left: 20px;
+      text-decoration: none;
+    }
+
+    #next {
+      right: 20px;
+      text-decoration: none;
+    }
+  
+    /* 滑动图片效果 */
+    
+
+    .intro{
+      margin: 20px;
+      width: 100%;
+      /* height: 2000px; */
+      
+    }
+    .header{
+      height:80px;
+      font-size: 25px;
+      display:flex;
+      flex-direction: row;
+    }
+    .left{
+      width: 10%;
+      height: 100%;
+      background-color:white;
+      line-height: 80px;
+      text-align: center;
+      cursor: pointer;
+      border-right: 1px solid #FECC5B;
+      color:black;
+    }
+    .left:hover{
+      animation: addfont 0.3s;
+      font-size: 40px;
+    }
+    .right:hover{
+      animation: addfont 0.5s;
+      font-size: 40px;
+    }
+    @keyframes addfont{
+      from{font-size: 25px;}
+      to{font-size: 40px;}
+    }
+    .right{
+      width: 10%;
+      height: 100%;
+      background-color: rgb(47, 45, 69);
+      line-height: 80px;
+      text-align: center;
+      cursor: pointer;
+      color: white;
+    }
+    .main{
+      display:flex;
+      flex-direction: row;
+      height: 100%;
+  
+    }
+    .main1{
+      width: 50%;
+      background-color:white;
+    }
+    .main2{
+        width: 800px;
+        
+    }
+    /* 文字框切换 */
+    h2{
+      font-size: 25px;
+      color: rgb(77, 102, 244);
+    }
+    h3{
+      font-size: 50px;
+      font-style: italic;
+    }
+    .text1{
+      font-size: 15px;
+      margin-bottom: 30px;
+    }
+    hr{
+      background-color: rgb(81, 140, 250);
+      height: 2px;
+      margin-bottom: 30px;
+    }
+    table{
+      border-collapse: collapse;
+    }
+    table td{
+      border:1px #808080 solid;
+      font-size: 15px;
+      overflow:hidden;
+    }
+    .title{
+      font-size: 50px;
+      text-align: center;
+      font-style: italic;
+
+    }
+    .jineng{
+      margin: 30px;
+      font-family: STKaiti;
+    }
+    .goback{
+      /* width: 60px;
+      height: 60px;
+      position:fixed;
+      right:0;
+      bottom: 0px;
+      background: url(大作业/ow.jpg) no-repeat;
+      animation: yes 5s infinite;
+      z-index: 999; */
+
+      width: 45px;
+      height: 45px;
+      position:fixed;
+      right:20px;
+      bottom: 20px;
+      border-radius: 50%;
+      background: url(大作业/ow.jpg) no-repeat;
+      /* animation: yes 5s infinite; */
+      z-index: 999;
+      cursor: pointer;
+    }
+    /* @keyframes yes{
+        50%{right: 200px;
+        }
+    } */
+    .sec2{
+      color: white;
+      height: 1100px;
+      font-size: 20px;
+    }
+    ul{
+      list-style: none;
+    }
+
+    .album{
+      /* 弹性布局 让页面元素水平+垂直居中 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* 让页面始终占浏览器总高 */
+      height: 100vh;
+      background-color: #000;
+      /* 视距 让元素看起来更有3D效果 */
+      perspective: 900px;
+      display: none;
+    }
+    .title_album{
+      position:fixed;
+      justify-content: center;
+      top:80px;
+    }
+    .album img{
+      /* width: 200px; */
+      height: 200px;
+    }
+    section {
+      /* 相对定位 */
+      position: relative;
+      width: 300px;
+      height: 200px;
+      /* 鼠标放到元素上变成小手 */
+      cursor: pointer;
+      /* 让子元素保留其3D位置 */
+      transform-style: preserve-3d;
+      /* 动画 名称 时长 linear 是匀速 播放 infinite 是无限次播放 */
+      animation: rotate 20s linear infinite;
+    }
+    section:hover {
+      /* 鼠标放到元素上停止动画 */
+      animation-play-state: paused;
+    }
+    section div {
+      /* 绝对定位 */
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      /* 设置元素的倒影效果 below 是倒影效果在元素下方 15px 是元素和倒影的距离 后面的属性和背景渐变色是一个属性 设置了一个从下到上由背景透明色过渡到设置了不透明度的白色 */
+      -webkit-box-reflect: below 15px -webkit-linear-gradient(transparent 10%, rgba(255, 255, 255, 0.3));
+    }
+    section div:nth-child(1) {
+      transform: translateZ(300px);
+      background-color: rgba(193,76,57,0.4);
+    }
+    section div:nth-child(2) {
+      transform: rotateY(60deg) translateZ(300px);
+      background-color: rgba(110,156,114,0.4);
+    }
+    section div:nth-child(3) {
+      transform: rotateY(120deg) translateZ(300px);
+      background-color: rgba(94,95,122,0.4);
+    }
+    section div:nth-child(4) {
+      transform: rotateY(180deg) translateZ(300px);
+      background-color: rgba(245,235,152,0.4);
+    }
+    section div:nth-child(5) {
+      transform: rotateY(240deg) translateZ(300px);
+      background-color: rgba(80,163,188,0.4);;
+    }
+    section div:nth-child(6) {
+      transform: rotateY(300deg) translateZ(300px);
+      background-color: rgba(249,169,154,0.4);
+    }
+    /* 先定义旋转动画 */
+    @keyframes rotate {
+        0% {
+            transform: rotateY(0);
+        }
+        100% {
+            transform: rotateY(360deg);
+        }
+    }
+  </style>
+  <script>
+    window.onload = function () {
+      var width = 800;
+      var list = document.getElementById("list");
+      var prev = document.getElementById("prev");
+      var next = document.getElementById("next");
+      var buttons = document.getElementById("buttons");
+      var bs = buttons.children;
+      for (var i = 0; i < bs.length; i++) {
+        //闭包
+        (function (i) {
+        bs[i].addEventListener("click", function () {
+          console.log(i);
+          list.style.left = i * -800 + "px";
+          for (var j = 0; j < bs.length; j++) {
+            if (j == i) {
+              bs[j].className = "on";
+            } else {
+              bs[j].className = "";
+            }
+          }
+        });
+        })(i)
+      }
+
+      var num = list.children.length; // get img number
+      function animate(offset) {
+        var left = list.style.left ? parseInt(list.style.left) : 0;
+
+        if (list.style.left) {
+          left = parseInt(list.style.left);
+        } else {
+          left = 0;
+        }
+
+        var newLeft = left - offset * width;
+        list.style.left = newLeft + "px";
+        if (newLeft <= -num * width) {
+          list.style.left = "0px";
+        }
+        if (newLeft > 0) {
+          list.style.left = -(num - 1) * width + "px";
+        }
+        var k = parseInt(list.style.left) / -800;
+        var bs = buttons.children;
+        for (var i = 0; i < bs.length; i++) {
+          if (i == k) {
+            bs[i].className = "on";
+          } else {
+            bs[i].className = "";
+          }
+        }
+      }
+      prev.onclick = function () {
+        animate(-1);
+      };
+      next.onclick = function () {
+        animate(1);
+      };
+
+      window.setInterval(function () {
+        animate(1);
+      }, 3000);
+    };
+  </script>
+</head>
+<body>
+  <div id="all">
+    <div class="heading1" id="heading1">
+      <h1> 禅&nbsp雅&nbsp塔</h1>
+    </div>
+    <div class="blank"></div>
+      <p align="center">
+        <video muted autoplay loop src="大作业/chanyata/1.mp4"  > 
+        </video>
+      </p>
+    <div class="intro">
+    <div class="header">
+      <div class="left" id="left">概况</div>
+      <div class="right" id="right">故事</div>
+    </div>
+    <div class="main" id="main">
+      <div class="main1" id="main1">
+        <br>  
+        <h2>&nbsp&nbsp角色类型</h2><br>
+        <h3>&nbsp&nbsp&nbsp支援</h3>
+        <br>
+        <div class="text1">
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 禅雅塔可以用和“谐”治愈盟友，也可以用“乱”削弱敌人，还可<br>
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 以在短时间内进入超凡入圣的状态，获得短暂的无敌效果。 <br>
+          
+        </div>
+        <hr>
+        <h2>&nbsp&nbsp技能</h2>
+        <table class="jineng">
+          <tr>
+            <td width="98">
+                <div><b>技能名称</b></div>
+              </td>
+              <td width="132">
+                <div><b>技能图标</b></div>
+              </td>
+              <td width="106">
+                <div><b>释放按键</b></div>
+              </td>
+              <td width="220">
+                <div><b>技能说明</b></div>
+              </td>
+              <td width="233">
+                <div><b>技能效果</b></div>
+            </td>
+          </tr>
+          <tr>
+              <td align="center" width="98">
+                  <div ><b>浮</b></div>
+              </td>
+              <td align="center" width="132">
+                <img src="大作业/chanyata/beidong.jpg" alt="">
+              </td>
+              <td align="center" width="106">
+                  <div >被动技能</div>
+              </td>
+              <td align="left" width="220">
+                  <div>禅雅塔移动的时候没有任何声音。</div>
+              </td>
+              <td align="left" width="233">
+               
+              </td>
+          </tr>
+          <tr>
+              <td align="center" width="98">
+                  <div ><b>灭</b></div>
+              </td>
+              <td align="center" width="132">
+                <img src="大作业/chanyata/attack.jpg" alt="">
+              </td>
+              <td align="center" width="106"><div >鼠标左键 <br><br><br><br>鼠标右键</div>
+              </td>
+              <td align="left" width="220">
+                  <div ><br> 连续射出破坏能量球<br><br><br><br> 在几秒的充能后，快速射出大量能量球。
+                </div>
+              </td>
+              <td valign="top" align="left" width="233">
+                伤害量：48/发 <br>
+                弹药量：20 <br>
+                装弹时间：1.5秒 <br>
+                射速：3发/秒 <br>
+                <br>
+                伤害量：48/发 <br>
+                弹药消耗：最多5发 <br> 
+                充能时间：2.5秒充满 <br>
+              </td>
+          </tr>
+          <tr>
+              <td align="center" width="98">
+                  <div ><b>谐</b></div>
+              </td>
+              <td align="center" width="132">
+                <img src="大作业/chanyata/shift.jpg" alt="">
+              </td>
+              <td align="center" width="106">
+                  <div >SHIFT</div>
+              </td>
+              <td align="left" width="220">
+                  <div >禅雅塔将一枚法球置于目标队友的肩膀。只要该盟友保持在禅雅塔的视野范围内，法球就可以缓慢恢复目标的生命值。同一时间只能对一个队友施放治疗法球。</div>
+              </td>
+              <td valign="top" align="left" width="233">
+                <br>
+                治疗量：30/秒 <br>
+                飞行速度：120米/秒 <br> 
+                持续时间：目标消失在视野内3秒/自己或者目标死亡
+              </td>
+          </tr>
+          <tr>
+              <td align="center">
+                  <div ><b>乱</b></div>
+              </td>
+              <td align="center">
+                <img src="大作业/chanyata/e.jpg" alt="">
+              </td>
+              <td align="center">
+                  E
+              </td>
+              <td>将扰乱法球附着在一名敌人身上，提高其受到的所有伤害，如果敌人脱离禅雅塔的视野范围一段时间，则效果消失。同一时间只能对一名敌人施放该效果。</td>
+              <td>
+                效果：目标受到额外30%伤害 <br>
+                飞行速度：120米/秒 <br>
+                持续时间：目标消失在视野内3秒/自己或者目标死亡/目标获得查莉娅的投射屏障” 
+              </td>
+          </tr>
+          <tr>
+              <td align="center">
+                  <div ><b>圣</b></div>
+              </td>
+              <td align="center">
+                <img src="大作业/chanyata/q.jpg" alt="">
+              </td>
+              <td align="center">Q</td>
+              <td>禅雅塔进入短时间的超凡状态。在超凡期间，禅雅塔无法使用技能或武器，但进入无敌状态并且会为自己和附近队友恢复生命值的同时增加自己移动速度。</td>
+              <td>
+                  
+                治疗量：300/秒 <br>
+                持续时间：6秒 <br>
+                移动速度增加：增加至200% <br>
+                治疗范围：15m
+              </td>
+          </tr>
+          
+      </table>
+      </div>
+        <div class="main2" id="main2">
+          <div class="title">
+            皮肤展示
+          </div>
+          <div id="container1">
+            <div id="list">
+              <img src="大作业/chanyata/1.jpg" />
+              <img src="大作业/chanyata/2.jpg" />
+              <img src="大作业/chanyata/3.jpg" />
+              <img src="大作业/chanyata/4.jpg" />
+            </div>
+            <div id="buttons">
+              <span index="1" class="on"></span>
+              <span index="2"></span>
+              <span index="3"></span>
+              <span index="4"></span>
+            </div>
+            <a href="javascript:;" id="prev" class="arrow">&lt;</a>
+            <a href="javascript:;" id="next" class="arrow">&gt;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="goback" id="goback"></div>
+    <!-- 回到初始菜单 -->
+  </div>
+  
+  <div class="album" id="album">
+    <div class="title_album">
+      <h1>请选择你的英雄</h1>
+    </div>
+    <section>
+      <div onclick="window.location.href='yingxiong3.html'";return false;><img src="大作业/chanyata.jpg" alt="" /></div>
+      <div onclick="window.location.href='yingxiong2.html'";return false;><img src="大作业/aolisa.jpg" alt="" /></div>
+      <div onclick="window.location.href='yingxiong1.html'";return false;><img src="大作业/dva.jpg" alt="" /></div>
+      <div><img src="大作业/mei.jpg" alt="" /></div>
+      <div><img src="大作业/79.jpg" alt="" /></div>
+      <div><img src="大作业/anna.jpg" alt="" /></div>
+    </section>
+  </div>
+  
+
+  
+  <script>
+    let left=document.getElementById('left');
+    let right=document.getElementById('right');
+    let main1=document.getElementById('main1');
+    let main1html=main1.innerHTML;
+    left.onclick=function(){
+      main1.innerHTML=main1html;
+      this.style.backgroundColor="white";
+      right.style.backgroundColor="rgb(47, 45, 69)";
+      main1.style.backgroundColor="white";
+      
+    }
+    right.onclick=function(){
+      main1.innerHTML=' <div class="sec2"><h2>&nbsp&nbsp简介</h2><br><ul><li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp全称：泰哈撒·禅雅塔，年龄：20岁</li><li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp职业：流浪僧侣、冒险家</li><li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp行动基地：尼泊尔，香巴里僧院（前）</li><li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp隶属：（前）香巴里僧人</li> </ul><br><br><h2>“本我不拘于形。”</h2><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp禅雅塔是一位游走于世界寻找灵魂升华之道的机械僧侣。据说任何有幸<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp遇到他的人，其生命轨迹也会发生改变。<br><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp多年之前，在“智械危机”结束之后，一群被放逐的智能机器人感受到<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp了被其称为“灵魂觉醒”的升华之道。他们放弃了自己被预先设定好的<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp生活，在喜马拉雅山深处建立起了一座寺庙。在冥思其存在本质和意义<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp多年之后，他们渐渐相信他们不止是人工智能而已，和人类一样，他们<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp也有灵魂。<br><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp在意识到他们在灵魂层面与人类一样后，由神秘僧侣泰哈撒·孟达塔带领<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp的这些僧侣开始寻找治愈一个世代前，由“智械危机”所留下的创伤，<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp并希望让人类和机器人重回曾经的和谐相处之道。他们最终被世人所接<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp纳，且他们的信念也得到了全球数百万人的支持。<br><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp但其中一位僧侣，禅雅塔并不赞同这一新道路。他认为要解决人类和机<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp器人之间根深蒂固的问题，不能依靠循循善诱，而必须通过个体联系和<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp互动。<br><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp最终，禅雅塔踏上了自己的旅途。他选择离开寺庙，游走世界，帮助那<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp些他所遇到的人摆脱凡尘，真正找到内心的平静。但如果有必要，他也<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp会为了保护无辜而拿起武器，无论人类还是机器人。<br><br></div>';
+      this.style.backgroundColor="grey";
+      left.style.backgroundColor="azure";
+      main1.style.backgroundColor="grey";
+    }
+
+    var OriginTitle = document.title;
+    var titleTime;
+    document.addEventListener("visibilitychange",
+    function() {
+      if (document.hidden) {
+          document.title = "你别走吖 Σ(っ °Д °;)っ";
+          clearTimeout(titleTime)
+      } 
+      else {
+          document.title = "(/≧▽≦/)你又回来啦！ " ;
+          titleTime = setTimeout(function() {
+              document.title = OriginTitle
+          },
+          2000);
+      }
+    });
+    //获取元素到页面顶部距离
+    function heightToTop(ele){
+      //ele为指定跳转到该位置的DOM节点
+      let bridge = ele;
+      let root = document.body;
+      let height = 0;
+      do{
+          height += bridge.offsetTop;
+          bridge = bridge.offsetParent;
+      }while(bridge !== root)
+      return height;
+    }
+    //跳转到相册
+    let goback=document.getElementById("goback");
+    let album=document.getElementById("album");
+    let head=document.getElementById('heading1');
+    var flag=true;
+    goback.addEventListener('click',function(){
+      if(flag){
+        album.style.display="block";
+        album.style.display="flex";
+        window.scrollTo({
+          top:heightToTop(album)
+        })
+        head.style.display="none";
+        flag=false;
+      }
+      else{
+        album.style.display="none";
+        window.scrollTo({
+          top:0
+        })
+        head.style.display="block";
+        flag=true;
+      }
+      
+    });
+    //滚轮事件
+    window.addEventListener('scroll',function(){
+      // console.log(document.body.scrollHeight);
+      // console.log(document.body.clientHeight);
+      // console.log(document.body.scrollTop);
+      // console.log(document.documentElement.scrollTop);
+      // console.log(document.body.scrollHeight==document.body.clientHeight+1834);
+      // console.log(document.body.scrollHeight==document.body.clientHeight+2003);
+      if(document.body.scrollHeight==document.body.clientHeight+1834){
+        if(document.documentElement.scrollTop<=1830){
+          album.style.display="none";
+          head.style.display="block";
+          flag=true;
+        }
+      }
+      if(document.body.scrollHeight==document.body.clientHeight+2003){
+        if(document.documentElement.scrollTop<=2000){
+          album.style.display="none";
+          head.style.display="block";
+          flag=true;
+        }
+      }
+    })
+      
+  </script>
+</body>
+</html>
